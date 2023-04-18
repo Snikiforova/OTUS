@@ -1,8 +1,13 @@
-`class Figure:
+class Figure:
     def __init__(self, name):
         self.name = name
+        self.area = 0
+        self.perimeter = 0
+        self.radius = 0
 
     def get_area(self):
+        pass
+    def get_perimeter(self):
         pass
 
     def add_area(self, other):
@@ -10,17 +15,5 @@
             return self.get_area() + other.get_area()
 
 
-class Rectangle(Figure):
-    def __init__(self, side_a, side_b):
-        super().__init__(name='Rectangle')
-        self.side_a = side_a
-        self.side_b = side_b
-
-    def get_area(self):
-        return self.side_a * self.side_b
 
 
-r = Rectangle(10, 20)
-print(r.get_area())
-r2 = Rectangle(1, 2)
-print(r.add_area(r2))```
