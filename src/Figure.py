@@ -26,5 +26,10 @@ class Figure:
         if isinstance(other, Figure):
                 return self.get_radius() + other.get_radius()
 
+        if not isinstance (Figure):
+            print("класс должен быть фигурой")
+            raise ValueError
+
+
 
 
