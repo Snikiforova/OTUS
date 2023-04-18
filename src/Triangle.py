@@ -6,5 +6,13 @@ class Triangle(Figure):
         self.side_b = side_b
         self.side_c = side_c
 
+        if (self.side_a <= 0) or (self.side_b <= 0) or (self.side_c <= 0):
+            print("Сторона должна быть больше 0!")
+            raise ValueError
+
     def get_area(self):
         return self.side_a * self.side_b * self.side_c
+
+    def get_perimeter(self):
+        return self.side_a + self.side_b + self.side_c
+
