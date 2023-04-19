@@ -1,5 +1,5 @@
 import pytest
-from src.triangle import Triangle
+from src.Triangle import Triangle
 
 
 @pytest.mark.parametrize('side_a, side_b, side_c, expected_perimeter, expected_area',
