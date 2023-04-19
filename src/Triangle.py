@@ -1,3 +1,4 @@
+import math
 from src.Figure import Figure
 class Triangle(Figure):
     def __init__(self, side_a, side_b, side_c):
@@ -11,7 +12,11 @@ class Triangle(Figure):
             raise ValueError
 
     def get_area(self):
-        return self.side_a * self.side_b * self.side_c
+        return round(
+            math.sqrt(
+                half_per * (half_per - self.side_a) * (half_per - self.side_b) * (half_per - self.side-c)
+            )
+        )
 
     def get_perimeter(self):
         return self.side_a + self.side_b + self.side_c
