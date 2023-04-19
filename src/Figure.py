@@ -17,7 +17,8 @@ class Figure:
     def add_area(self, other):
         if isinstance(other, Figure):
             return self.get_area() + other.get_area()
-
+        else:
+            raise ValueError
     def add_perimeter(self, other):
         if isinstance(other, Figure):
             return self.get_perimeter() + other.get_perimeter()

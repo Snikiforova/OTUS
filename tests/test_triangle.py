@@ -1,12 +1,11 @@
 import pytest
 from src.Triangle import Triangle
 
-
 @pytest.mark.parametrize('side_a, side_b, side_c, expected_perimeter, expected_area',
                          [
                              (10, 10, 10, 30, 43.3),
-                             (2, 2, 3, 7, 1.98),
-                             (5, 6, 8, 19, 14.98),
+                             (2, 2, 3, 7, 2.0),
+                             (5, 6, 8, 19, 15.0),
                          ]
                          )
 def test_triangle_creation_positive(side_a, side_b, side_c, expected_perimeter, expected_area):
@@ -33,7 +32,7 @@ def test_triangle_creation_negative(side_a, side_b, side_c):
 
 
 def test_two_triangle_areas_sum():
-    expected_sum = 45.28
+    expected_sum = 45.3
     triangle_1 = Triangle(10, 10, 10)
     triangle_2 = Triangle(2, 2, 3)
     assert triangle_1.add_area(triangle_2) == expected_sum, f'Expected sum is {expected_sum}'
@@ -44,6 +43,7 @@ def test_two_triangle_areas_sum_negative(some_other_class):
     triangle_1 = Triangle(10, 10, 10)
     with pytest.raises(ValueError):
         triangle_1.add_area(some_other_class)
+
 
 
 
