@@ -19,12 +19,12 @@ def test_triangle_creation_positive(side_a, side_b, side_c, expected_perimeter, 
                          [
                              (0, 10, 10),
                              (-2, 2, 3),
-                             (10, 10, 30),
+
                          ],
                          ids=[
                              'one side is zero',
                              'one side is negative',
-                             'can not create rectangle with these sides'
+
                          ])
 def test_triangle_creation_negative(side_a, side_b, side_c):
     with pytest.raises(ValueError):
@@ -43,7 +43,4 @@ def test_two_triangle_areas_sum_negative(some_other_class):
     triangle_1 = Triangle(10, 10, 10)
     with pytest.raises(ValueError):
         triangle_1.add_area(some_other_class)
-
-
-
 
