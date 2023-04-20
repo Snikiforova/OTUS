@@ -29,14 +29,20 @@ def test_square_creation_negative(side_a):
               Square(side_a)
 
 
-def test_two_square_areas_sum():
-    expected_sum = 104
-    square_1 = Square(10)
-    square_2 = Square(2)
+@pytest.mark.parametrize('side_a_1, side_a_2, expected_sum',
+                         [
+                             (10, 2, 104),
+                         ]
+                         )
+def test_two_square_areas_sum(side_a_1, side_a_2, expected_sum):
+    square_1 = Square(side_a_1)
+    square_2 = Square(side_a_2)
     assert square_1.add_area(square_2) == expected_sum, f'Expected sum is {expected_sum}'
 
-    @pytest.mark.parametrize('some_other_class', [10, 'something'], ids=['integer', 'float', 'str'])
-    def test_two_square_areas_sum_negative(some_other_class):
-        square_1 = Square(10)
-        with pytest.raises(ValueError):
-            square_1.add_area('some_other_class')
+
+@pytest.mark.parametrize('some_other_class', ['some_value'], ids=['string'])
+def test_two_square_areas_sum_negative(some_other_class):
+    square_1 = Square(10)
+    square_2 = Square(2)
+    with pytest.raises(ValueError):
+        square_1.add_area(some_other_class)
