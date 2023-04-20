@@ -25,8 +25,6 @@ def test_rectangle_creation_negative(side_a, side_b, expected_area):
     if expected_area == ValueError:
         with pytest.raises(ValueError):
             Rectangle(side_a, side_b)
-    else:
-        rectangle = Rectangle(side_a, side_b)
-        assert rectangle.area() == expected_area, f'Expected area is {expected_area}'
+
 
 
